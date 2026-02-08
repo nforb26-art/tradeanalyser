@@ -1,9 +1,6 @@
-fastapi==0.104.1
-uvicorn==0.24.0
-requests==2.31.0
-python-dotenv==1.0.0
-google-generativeai==0.3.0
-pydantic==2.4.2
-pytest==7.4.3
-transformers==4.36.0
-torch==2.6.0
+fastapi==0.115.2  # Safe recent version
+pydantic==2.9.2    # Matches the core below
+pydantic-core==2.23.4  # This version has pre-built wheels for Render/Python
+uvicorn==0.30.6
+requests==2.32.3   # If you use it for APIs
+# Add any other deps you have, like pandas if for analysis
