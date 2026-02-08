@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Analyzer - Crypto Trading Analysis</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📊 Trade Analyzer</h1>
+            <p class="subtitle">AI-Powered Cryptocurrency Trading Analysis</p>
+        </header>
+
+        <main>
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search trading pair (e.g., BTC/USDT, ETH, BTC)..."
+                        class="search-input"
+                    >
+                    <button id="analyzeBtn" class="analyze-btn">Analyze</button>
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+            </section>
+
+            <!-- Analysis Section -->
+            <section id="analysisSection" class="analysis-section" style="display: none;">
+                <div class="analysis-container">
+                    <!-- Pair Header -->
+                    <div class="pair-header">
+                        <h2 id="pairName"></h2>
+                        <span id="pairPrice" class="pair-price"></span>
+                        <span id="pairChange" class="pair-change"></span>
+                    </div>
+
+                    <!-- Market Volatility -->
+                    <div class="volatility-box">
+                        <h3>Market Volatility</h3>
+                        <div class="volatility-grid">
+                            <div class="volatility-item">
+                                <span>Volatility Level:</span>
+                                <strong id="volatilityLevel">-</strong>
+                            </div>
+                            <div class="volatility-item">
+                                <span>Volatility %:</span>
+                                <strong id="volatilityPercent">-</strong>
+                            </div>
+                            <div class="volatility-item">
+                                <span>SL Adjustment:</span>
+                                <strong id="slPercentage">-</strong>
+                            </div>
+                            <div class="volatility-item">
+                                <span>TP Adjustment:</span>
+                                <strong id="tpPercentage">-</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trading Levels -->
+                    <div class="trading-levels">
+                        <h3>Trading Levels</h3>
+                        <div class="levels-grid">
+                            <div class="level entry">
+                                <label>Entry Point</label>
+                                <div id="entryPrice" class="level-value"></div>
+                            </div>
+                            <div class="level stoploss">
+                                <label>Stop Loss</label>
+                                <div id="stoplossPrice" class="level-value"></div>
+                            </div>
+                            <div class="level takeprofit">
+                                <label>Take Profit</label>
+                                <div id="takeprofitPrice" class="level-value"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk/Reward -->
+                    <div class="risk-reward">
+                        <h3>Risk Management</h3>
+                        <div class="rr-value">
+                            <span>Risk/Reward Ratio:</span>
+                            <strong id="rrRatio"></strong>
+                        </div>
+                    </div>
+
+                    <!-- Sentiment Analysis -->
+                    <div class="sentiment-box">
+                        <h3>🤖 AI Sentiment Analysis</h3>
+                        <div class="consensus-box">
+                            <label>AI Consensus</label>
+                            <div id="consensusSentiment" class="sentiment-value bullish"></div>
+                            <div id="consensusConfidence" class="confidence-score"></div>
+                        </div>
+                        
+                        <h4>Individual AI Models</h4>
+                        <div id="aiModels" class="ai-models-grid"></div>
+                    </div>
+
+                    <!-- Market Data -->
+                    <div class="market-data">
+                        <h3>Market Data</h3>
+                        <div class="data-grid">
+                            <div class="data-item">
+                                <span>Market Cap:</span>
+                                <strong id="marketCap"></strong>
+                            </div>
+                            <div class="data-item">
+                                <span>24h Volume:</span>
+                                <strong id="volume24h"></strong>
+                            </div>
+                            <div class="data-item">
+                                <span>24h High:</span>
+                                <strong id="high24h"></strong>
+                            </div>
+                            <div class="data-item">
+                                <span>24h Low:</span>
+                                <strong id="low24h"></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+        </main>
+
+        <footer class="footer">
+            <p>Data from CoinGecko • Analysis by Gemini AI • News from NewsAPI • Technical data from Alpha Vantage</p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
